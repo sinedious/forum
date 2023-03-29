@@ -20,6 +20,7 @@ from django.conf.urls import include
 
 urlpatterns = [
     path("",views.main,name='index'),
+    path("user/",views.user,name='user'),
     path('login/', include('second_try.urls')),
     path('admin/', admin.site.urls),
 ]

@@ -21,4 +21,13 @@ class AccessRecord(models.Model):
     def __str__(self) -> str:
         return str(self.date)
     
+class Users_test(models.Model):
+    name = models.CharField(max_length=264, unique=True)
+    last = models.CharField(max_length=20, unique=True)
+    mail = models.EmailField(max_length=50)
+
+    def __str__(self) -> str:
+        return self.name
+
+    
 

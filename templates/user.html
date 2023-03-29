@@ -9,44 +9,44 @@
     <body>
       <header>
         <nav id="main">
-            <div> <a href=" " class="logo">Titel</a></div>
+            <div> <a href="../" class="logo">Titel</a></div>
             <div class="search-bar">
               <input type="text" placeholder="Suche">
               <button>Suchen</button>
             </div>
             <div class="profile">
-              <a href="login" id="login">Login jetzt<a></a>
+              <a href="../login" id="login">Login jetzt<a></a>
             </div>
           </nav>
         <nav id="main-search">
           <a class="main-item" href="">Lehrer</a>
           <a class="main-item" href="">Fächer</a>
-          <a class="main-item" href="user/">Abteilungen</a> 
+          <a class="main-item" href="">Abteilungen</a> 
         </nav>
       </header>
-    <!--<img src="{% static "img\fake-human-circle-img.png" %}">-->
-      <div class="djangtwo">
+      <h1>Hallo</h1>
+      {% if user_register %}
 
-        {% if access_records %}
-          <table>
-            <thead>
-              <th>Site Name</th>
-              <th>Date Accessed</th>
-            </thead> 
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Nachname</th>
+            <th>E-Mail</th>
+          </thead>
 
-          {% for acc in access_records %}
+          {% for user in user_register %}
+
           <tr>
-            <td>{{ acc.name }}</td>
-            <td>{{ acc.date }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.last }}</td>
+            <td>{{ user.mail }}</td>
           </tr>
-
           {% endfor %}
         </table>
 
         {% else %}
-          <p>NO ACCES RECORDS FOUND!</p>
-
-        {% endif %}
-      </div>
+          <p>no user</p>
+      
+      {% endif %}
     </body>
 </html>
