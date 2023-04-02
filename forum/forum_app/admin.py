@@ -1,3 +1,4 @@
 from django.contrib import admin
+from forum_app.models import beiträge
 
-# Register your models here.
+admin.site.register(beiträge)
