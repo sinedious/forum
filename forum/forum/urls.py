@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from forum_app import views
+from django.conf.urls import include
 
 urlpatterns = [
+    path('login/',include('forum_app.urls')),
     path('', views.index,name='index'),
     path('admin/', admin.site.urls),
+    
 ]
