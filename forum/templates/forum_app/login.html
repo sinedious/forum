@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="de">
     <head>
         <meta charset="utf-8">
         <title>Syp_Projekt</title>
-        <link href="css/login-style.css" rel="stylesheet">
+        <link href="{%static 'login-style2.css'%}" rel="stylesheet">
     </head>
     <body>
       <header>
         <nav id="main">
-            <div> <a href="index.html" class="logo">Titel</a></div>
+            <div> <a href="../" class="logo">Titel</a></div>
             <div class="search-bar">
               <input type="text" placeholder="Suche">
               <button>Suchen</button>
@@ -23,18 +24,15 @@
           <a class="main-item" href="">Klassen</a>
         </nav>
       </header>
-      <form id="login-form">
-        <div class="login-window">
-          <label class="login-label" for="email">E-Mail-Adresse: </label>
-          <input class="login-input" type="email" id="email" name="email" required>
-        </div>
-        <div class="login-window">
-          <label class="login-label" for="password">Passwort: </label>
-          <input class="login-input" type="password" id="password" name="password" required>
-        </div> 
-        <p>Noch keinen Account? <a href="register.html">Hier Registrieren</a></p>
-        <p>Passwort Vergessen? <a href="">Passwort zurücksetzen</a></p>
-        <button id="einlogen" type="submit">Einlogen</button>
-      </form>
+      <div class="login-window">
+        <form method="POST" class="login-form">
+          {{login.as_p}}
+          {%csrf_token%}
+          <p class="form-question">Noch keinen Account? <a href="">Hier Registrieren</a></p>
+          <p class="form-question">Passwort Vergessen? <a href="">Passwort zurücksetzen</a></p>
+          <input type="submit" value="Login" id="login-form-input">
+        </form>
+      </div>
+      
     </body>
 </html>
