@@ -9,7 +9,8 @@ def index(request):
 
         if post.is_valid():
             post.save(commit=True)
-            return render(request, 'forum_app/index.html')
+            post = forms.PostBeitrag()
+            return render(request, 'forum_app/index.html',{'beitrag_form':post})
         
     return render(request, 'forum_app/index.html',{'beitrag_form':post})
 
