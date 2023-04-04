@@ -2,7 +2,19 @@ from django.shortcuts import render
 from forum_app import forms
 
 def index(request):
-    return render(request, 'forum_app/index.html')
+    post = forms.PostBeitrag()
+
+    if request.method == 'POST':
+        post = forms.PostBeitrag(request.POST)
+
+        if post.is_valid():
+            post.save(commit=True)
+            return render(request, 'forum_app/index.html')
+        
+    return render(request, 'forum_app/index.html',{'beitrag_form':post})
+
+
+
 
 def login(request):
     login = forms.User_Login()

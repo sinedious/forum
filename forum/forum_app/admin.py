@@ -1,4 +1,4 @@
 from django.contrib import admin
-from forum_app.models import beiträge
+from forum_app.models import beitrag
 
-admin.site.register(beiträge)
+admin.site.register(beitrag)

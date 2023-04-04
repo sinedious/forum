@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <title>Syp_Projekt</title>
-        <link href="{%static 'style.css'%}" rel="stylesheet">
+        <link href="{%static 'style2.css'%}" rel="stylesheet">
     </head>
     <body>
       <header>
@@ -24,5 +24,24 @@
           <a class="main-item" href="">Abteilungen</a> 
         </nav>
       </header>
+      <input id="post_erstellen" type="submit" value="Beitrag erstellen">
+      <div id="beitrag-overlay"></div>
+      <div id="beitrag-form">
+        <form method="POST">
+          {{beitrag_form.as_p}}
+          {%csrf_token%}
+          <input type="submit">
+        </form>
+      </div>
+
+
+      <script>
+        document.getElementById('post_erstellen').addEventListener('click', function(event){
+          var overlay = document.getElementById('beitrag-overlay');
+          var form = document.getElementById('beitrag-form');
+          overlay.style.display='block';
+          form.style.display='block';
+        });
+      </script>
     </body>
 </html>

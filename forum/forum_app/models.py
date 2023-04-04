@@ -1,6 +1,6 @@
 from django.db import models
 
-class beiträge(models.Model):
+class beitrag(models.Model):
     titel = models.CharField(max_length=100)
     beitrag = models.CharField(max_length=500)
 

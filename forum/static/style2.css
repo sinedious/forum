@@ -79,3 +79,6 @@
   .main-item:hover{
     background-color: #333;
   }
+#beitrag-form{
+  display: none;
+}
