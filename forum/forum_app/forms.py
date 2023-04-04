@@ -4,9 +4,11 @@ from forum_app.models import beitrag
 
 class User_Login(forms.Form):
     email = forms.EmailField(label=False ,widget= forms.TextInput(attrs={'placeholder': 'E-Mail'}))
-    passwort = forms.CharField(label=False ,widget=forms.PasswordInput(attrs={'placeholder': 'passwort'}))
+    passwort = forms.CharField(label=False ,widget=forms.PasswordInput(attrs={'placeholder': 'Passwort'}))
 
 class PostBeitrag(forms.ModelForm):
     class Meta:
         model = beitrag
-        fields = '__all__'
+        fields = ['titel', 'beitrag']
+        widgets = {'beitrag': forms.Textarea()}
+        

@@ -30,7 +30,8 @@
         <form method="POST">
           {{beitrag_form.as_p}}
           {%csrf_token%}
-          <input type="submit">
+          <input type="submit" value="Posten">
+          <input id="Abbrechen" type="submit" value="Abbrechen">
         </form>
       </div>
 
@@ -41,6 +42,12 @@
           var form = document.getElementById('beitrag-form');
           overlay.style.display='block';
           form.style.display='block';
+        });
+        document.getElementById('Abbrechen').addEventListener('click', function(event){
+          var overlay = document.getElementById('beitrag-overlay');
+          var form = document.getElementById('beitrag-form');
+          overlay.style.display='none';
+          form.style.display='none';
         });
       </script>
     </body>
