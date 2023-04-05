@@ -28,10 +28,17 @@
       <div id="beitrag-overlay"></div>
       <div id="beitrag-form">
         <form method="POST">
-          {{beitrag_form.as_p}}
+          <div>
+            {{ beitrag_form.titel }}
+          </div>
+          <div>
+            {{ beitrag_form.beitrag }}
+          </div>
           {%csrf_token%}
-          <input type="submit" value="Posten">
-          <input id="Abbrechen" type="submit" value="Abbrechen">
+          <div>
+            <input type="submit" value="Posten">
+            <input id="Abbrechen" type="submit" value="Abbrechen">
+          </div>
         </form>
       </div>
 
