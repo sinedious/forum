@@ -79,6 +79,8 @@
   .main-item:hover{
     background-color: #333;
   }
+
+/*Beitrag Form Style*/
 #beitrag-form{
   display: none;
 }
