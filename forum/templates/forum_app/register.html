@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="de">
     <head>
         <meta charset="utf-8">
         <title>Syp_Projekt</title>
-        <link href="css/register-style.css" rel="stylesheet">
+        <link href="{%static 'register.css'%}" rel="stylesheet">
     </head>
     <body>
       <header>
@@ -30,7 +31,7 @@
           <form method="post">
             {{register_form.as_p}}
             {%csrf_token%}
-            <input type="submit" value="Registrieren">
+            <input id="register" type="submit" value="Registrieren">
           </form>
         
           {%endif%}
