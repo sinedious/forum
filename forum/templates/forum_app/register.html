@@ -23,7 +23,17 @@
           <a class="main-item" href="">Klassen</a>
         </nav>
       </header>
-      
+        {% if registered %}
+          <h1>danke für die registrierung!</h1>
+
+        {% else %}
+          <form method="post">
+            {{register_form.as_p}}
+            {%csrf_token%}
+            <input type="submit" value="Registrieren">
+          </form>
+        
+          {%endif%}
       </form>
     </body>
 </html>
