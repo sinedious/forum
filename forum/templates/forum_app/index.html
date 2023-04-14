@@ -15,13 +15,20 @@
               <button>Suchen</button>
             </div>
             <div class="profile">
-              <a href="login/" id="login">Login jetzt<a></a>
+              {% if user.is_authenticated %}
+                <a class="login" href="{% url 'logout' %}">Logout</a>
+              {%else%}
+              <a href="login/" class="login">Login jetzt<a></a>
+              {%endif%}
             </div>
           </nav>
         <nav id="main-search">
           <a class="main-item" href="">Lehrer</a>
           <a class="main-item" href="">Fächer</a>
           <a class="main-item" href="">Abteilungen</a> 
+
+          
+
         </nav>
       </header>
       <input id="post_erstellen" type="submit" value="Beitrag erstellen">
@@ -40,6 +47,12 @@
             <input id="Abbrechen" type="submit" value="Abbrechen">
           </div>
         </form>
+      </div>
+      <div>
+        {% if user.is_authenticated %}
+          <h1>Wilkommen, {{username}}</h1>
+              
+        {%endif%}
       </div>
 
 

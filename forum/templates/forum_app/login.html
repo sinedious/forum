@@ -24,12 +24,13 @@
         </nav>
       </header>
       <div class="login-window">
-        <form method="POST" class="login-form">
-          {{login.as_p}}
+        <form method="POST"  class="login-form">
           {%csrf_token%}
-          <p class="form-question">Noch keinen Account? <a href="">Hier Registrieren</a></p>
-          <p class="form-question">Passwort Vergessen? <a href="">Passwort zurücksetzen</a></p>
-          <input type="submit" value="Login" id="login-form-input">
+          <input class="input" type="text" name="username" placeholder="Username">
+
+          <input class="input" type="password" name="password" placeholder="password">
+
+          <input id="login-form-input" type="submit" value="Login">
         </form>
       </div>
       
