@@ -9,13 +9,13 @@
     <body>
       <header>
         <nav id="main">
-            <div> <a href="index.html" class="logo">Titel</a></div>
+            <div> <a href="{% url 'index' %}" class="logo">Titel</a></div>
             <div class="search-bar">
               <input type="text" placeholder="Suche">
               <button>Suchen</button>
             </div>
             <div class="profile">
-              <a href="login.html" id="login">Login<a></a>
+              <a href="{% url 'login' %}" id="login">Login<a></a>
             </div>
           </nav>
         <nav id="main-search">

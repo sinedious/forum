@@ -16,7 +16,7 @@ def index(request):
         if post.is_valid():
             post.save(commit=True)
             post = forms.PostBeitrag()
-            return render(request, 'forum_app/index.html',{'beitrag_form':post})
+            return HttpResponseRedirect(reverse('index'))
         
     return render(request, 'forum_app/index.html',{'beitrag_form':post, 'username':welcome})
 
