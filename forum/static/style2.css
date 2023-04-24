@@ -84,3 +84,14 @@
 #beitrag-form{
   display: none;
 }
+
+.loged-in{
+  color: white;
+  display: block;
+  font-size: small;
+  margin-bottom: 0.3rem;
+}
+
+.loged-in:hover{
+  text-decoration: none;
+}

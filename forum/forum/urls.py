@@ -19,10 +19,9 @@ from forum_app import views
 from django.conf.urls import include
 
 urlpatterns = [
-    path('login/',include('forum_app.urls')),
+    path('login/',include('login_register.urls')),
     path('', views.index,name='index'),
     path('admin/', admin.site.urls),
-    path('logout', views.user_logout, name='logout'),
     path('lehrer/',views.lehrer,name = "lehrer"),
     path('lehrer/rules/',views.rules, name="rules")
     

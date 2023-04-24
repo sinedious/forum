@@ -16,7 +16,8 @@
             </div>
             <div class="profile">
               {% if user.is_authenticated %}
-                <a class="login" href="{% url 'logout' %}">Logout</a>
+                <a class="loged-in" href="{% url 'logout' %}">Logout</a>
+                <a href="" class="loged-in">Mein Profil</a>
               {%else%}
               <a href="{% url 'login' %}" class="login">Login jetzt<a></a>
               {%endif%}

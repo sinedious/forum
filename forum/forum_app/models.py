@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.core.validators import MinLengthValidator
 
 class beitrag(models.Model):
@@ -9,12 +8,6 @@ class beitrag(models.Model):
     def __str__(self) -> str:
         return self.titel
     
-
-class register(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
-
-    def __str__(self) -> str:
-        return self.user.username
     
 class Feedback(models.Model):
     title = models.CharField(max_length=200)
