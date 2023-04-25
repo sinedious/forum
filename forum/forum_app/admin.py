@@ -1,5 +1,6 @@
 from django.contrib import admin
-from forum_app.models import beitrag,Feedback
+from forum_app.models import beitrag
+from lehrer.models import Feedback
 
 class PostAdmin(admin.ModelAdmin):
     list_filter=("pub_date")    #Zum filtern von den beiträgen gedacht, funktioniert nicht xd?
