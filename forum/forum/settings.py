@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'forum_app',
     'lehrer',
     'login_register',
+    'profil',
 ]
 
 MIDDLEWARE = [

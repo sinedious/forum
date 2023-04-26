@@ -1,14 +1,12 @@
 from django import forms
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserChangeForm
 
-
-class register_form(forms.ModelForm):
-
-    password = forms.CharField(label=False,widget=forms.PasswordInput(attrs={'placeholder':'Passwort'}))
+class userProfileForm(forms.ModelForm):
+    password = None
     username = forms.CharField(label=False,widget=forms.TextInput(attrs={'placeholder':'Username'}))
     email = forms.CharField(label=False,widget=forms.EmailInput(attrs={'placeholder':'E-Mail'}))
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password']
-
+        fields = ('username', 'email')

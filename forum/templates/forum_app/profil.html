@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Syp_Projekt</title>
+        <link href="" rel="stylesheet">
+    </head>
+    <body>
+      <form method="POST">
+        {%csrf_token%}
+        {{profil.as_p}}
+        <input type="submit" value="Bestätigen">
+      </form>
+    </body>
+</html>
