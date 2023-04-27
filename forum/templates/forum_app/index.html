@@ -18,6 +18,7 @@
               {% if user.is_authenticated %}
                 <a class="loged-in" href="{% url 'logout' %}">Logout</a>
                 <a href="{%url 'profil'%}" class="loged-in">Mein Profil</a>
+                <a href="{%url 'inbox'%}" class="loged-in">Nachrichten</a>
                 {% if user.is_superuser %}
                 <a href="{% url 'admin:index' %}" class="loged-in" style="color: red;" >Admin</a>
                 {%endif%}

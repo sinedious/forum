@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Syp_Projekt</title>
+        <link href="{%static 'style2.css'%}" rel="stylesheet">
+    </head>
+    <body>
+      <header>
+        <nav id="main">
+            <div> <a href="{%url 'index'%}" class="logo">Titel</a></div>
+            <div class="search-bar">
+              <input type="text" placeholder="Suche">
+              <button>Suchen</button>
+            </div>
+            <div class="profile">
+              {% if user.is_authenticated %}
+                <a class="loged-in" href="{% url 'logout' %}">Logout</a>
+                <a href="{%url 'profil'%}" class="loged-in">Mein Profil</a>
+                {% if user.is_superuser %}
+                <a href="{% url 'admin:index' %}" class="loged-in" style="color: red;">Admin</a>
+                {%endif%}
+              {%else%}
+              <a href="{% url 'login' %}" class="login">Login jetzt<a></a>
+              {%endif%}
+            </div>
+          </nav>
+        <nav id="main-search">
+          <a class="main-item" href="/lehrer">Lehrer</a>
+          <a class="main-item" href="">Fächer</a>
+          <a class="main-item" href="">Abteilungen</a> 
+
+          
+
+        </nav>
+      </header>
+
+
+      <form method="POST">
+        {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit" value="Senden">
+      </form>
+    </body>
+</html>

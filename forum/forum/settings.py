@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'lehrer',
     'login_register',
     'profil',
+    'message',
 ]
 
 MIDDLEWARE = [
