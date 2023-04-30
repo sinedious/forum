@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <title>Syp_Projekt</title>
-        <link href="{%static 'style2.css'%}" rel="stylesheet">
+        <link href="{%static 'style-profil.css'%}" rel="stylesheet">
     </head>
     <body>
       <header>
@@ -37,10 +37,38 @@
       </header>
 
 
-      <form method="POST">
+      <form method="POST" class="edit_profile">
         {%csrf_token%}
-        {{profil.as_p}}
+        {{profil.username}} <br>
+        {{profil.email}} <br>
         <input type="submit" value="Bestätigen">
       </form>
+
+      <div class="daten">
+        <p>Username: {{user.username}}</p>
+        <p>Email: {{user.email}}</p>
+        <input type="submit" value="Daten Ändern" id="ändern">
+      </div>
+
+
+      <script>
+        const editForm = document.querySelector('.edit_profile');
+        const data = document.querySelector('.daten');
+        const changeBtn = document.querySelector('#ändern');
+
+        changeBtn.addEventListener('click', () => {
+          
+          editForm.classList.add('show');
+          data.classList.add('out')
+
+          setTimeout(() => {
+          data.style.display = 'none';
+        }, 1000);
+
+        });
+
+        
+      </script>
+      
     </body>
 </html>
