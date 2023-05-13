@@ -60,6 +60,13 @@
         {%endif%}
       </div>
 
+      <ul>
+      {% for post in beitrag %}
+        <strong>{{ post.titel }}</a> <br/> </strong>
+        {{ post.beitrag }}<hr>
+        {% endfor%}
+        
+      </ul>
 
       <script>
         document.getElementById('post_erstellen').addEventListener('click', function(event){
