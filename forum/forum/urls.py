@@ -25,5 +25,5 @@ urlpatterns = [
     path('lehrer/',include('lehrer.urls')),  
     path('profil/',include('profil.urls')),
     path('inbox/', include('message.urls')),
-    path('inbox/', include('forum_app.urls')),
+    path('', include('forum_app.urls')),
 ]
