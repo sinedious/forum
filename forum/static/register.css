@@ -2,6 +2,8 @@
     margin: 0px;
     padding: 0px;
   }
+
+  
   /*Main Leiste oben*/
   #main {
       display: flex;
@@ -17,6 +19,7 @@
       font-weight: bold;
       text-decoration: none;
       color: white;
+      font-family: Arial, Helvetica, sans-serif;
     }
     
     .search-bar input[type="text"] {
@@ -48,6 +51,7 @@
         background-color: #fff;
         text-decoration: none;
         color: black;
+        font-family: Arial, Helvetica, sans-serif;
     }
     
     .profile #login:hover{
@@ -81,36 +85,121 @@
       box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
     }
 
-form{
-    max-width: 400px;
-    margin: auto;
-    margin-top: 150px;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    /* FORMULAR */
 
-}
-#id_username, #id_email, #id_password{
-    display: block;
-    margin: 15px auto 15px auto;
-    text-align: center;
-    font-size: large;
-    width: 380px;
-    padding: 10px ;
-}
-#register{
-    display: block;
-    margin: auto;
-    width: 100px;
-    height: 50px;
-    transition: all .5s ease;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-#register:hover{
-    transform: translateY(-1px);
-    background-color: #fffcfc;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
-}
+    form {
+      max-width: 500px;
+      margin: auto;
+      margin-top: 150px;
+      padding: 30px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    #id_username,
+    #id_email,
+    #id_password {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      font-size: 16px;
+      width: 100%;
+      padding: 12px;
+      background-color: #ffffff;
+      color: #333333;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    
+    #register {
+      display: block;
+      margin: 30px auto;
+      width: 150px;
+      height: 50px;
+      transition: all 0.5s ease;
+      border-radius: 5px;
+      border: none;
+      background-color: #333333;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    
+    #register:hover {
+      transform: translateY(-3px);
+      background-color: #444444;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .login-form{
+      position: absolute;
+      inset: 4px;
+      background-color: #222;
+      padding: 50px 40px;
+      display:flex;
+      flex-direction: column;
+      z-index: 2;
+      border-radius: 8px;
+    }
+    
+    .inputbox{
+      position: relative;
+      width: 300px;
+      margin-top: 35px;
+    }
+    
+    .inputbox input{
+      position: relative;
+      width: 100%;
+      padding: 20px 10px 10px;
+      background: transparent;
+      outline: none;
+      border: none;
+      box-shadow: none;
+      color: #23242a;
+      font-size: 1em;
+      transition: 0.5s;
+      z-index: 10; 
+    }
+    
+    .inputbox span {
+      position: absolute;
+      left: 0px;
+      padding: 20px 0px 10px;
+      pointer-events: none;
+      color: #8f8f8f;
+      font-size: 1em;
+      transition: 0.5s;
+    }
+    
+    .inputbox input:valid ~ span,
+    .inputbox input:focus ~ span {
+      color:#fff;
+      font-size: 0.75em;
+      transform: translateY(-34px);
+    
+    }
+    .inputbox i {
+      position: absolute;
+      left: 0px;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: 0.5s;
+      pointer-events: none;
+    }
+    
+    .inputbox input:valid ~ i,
+    .inputbox input:focus ~ i {
+      height: 44px;
+    }
+        
