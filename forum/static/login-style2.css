@@ -1,286 +1,296 @@
 *{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
-  }
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
 
-  body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #23242a;
-    overflow-x: hidden;
-  }
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+  background-color: #23242a;
+  overflow-x: hidden;
+  margin-top: 250px;
+}
 
 
-  /*Navigation*/    /*ram(px) und % auspropieren*/
+/*Navigation*/
 
-  header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background-color: #1c1c1c;
-    padding: 20px 40px;
-    display: flex;
-    justify-content:space-between ;
-    align-items: center;
-    box-shadow: 0 15px 15px rgba(0,0,0,0.5);
-  }
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #1c1c1c;
+  padding: 20px 40px;
+  display: flex;
+  justify-content:space-between ;
+  align-items: center;
+  box-shadow: 0 15px 15px rgba(0,0,0,0.5);
+}
 
-  .logo{
-    color: #3fc6d0;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
+.logo{
+  color: #3fc6d0;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 
-  .nav{
-    display: flex;
-    align-items: center; 
-  }
+.nav{
+  display: flex;
+  align-items: center; 
+}
 
-  header ul{
-    position: relative;
-    display: flex;
-    gap: 40px;
-  }
+header ul{
+  position: relative;
+  display: flex;
+  gap: 40px;
+}
 
 header ul li{
-  list-style: none;
+list-style: none;
 }  
 
 header ul li a{
-  position: relative;
-  text-decoration: none;
-  font-size: 1em;
-  color: #3fc6d0;
-  text-transform:uppercase ;
-  letter-spacing: 0.2em;
+position: relative;
+text-decoration: none;
+font-size: 1em;
+color: #3fc6d0;
+text-transform:uppercase ;
+letter-spacing: 0.2em;
 }  
 
 header ul li a::before{
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  width: 100%;
-  height: 2px;
-  background-color: #ce2f5d;
-  transform: scaleX(0);
-  transition: transform 0.5s ease-in-out;
-  transform-origin: right;
+content: '';
+position: absolute;
+bottom: -8px;
+width: 100%;
+height: 2px;
+background-color: #ce2f5d;
+transform: scaleX(0);
+transition: transform 0.5s ease-in-out;
+transform-origin: right;
 }
 
 header ul li a:hover::before{
-  transform: scaleX(1);
-  transform-origin: left;
+transform: scaleX(1);
+transform-origin: left;
 }
 
 /*Search*/
 
 header.search{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em ;
-  z-index: 10;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 1.5em ;
+z-index: 10;
 }
 
 .search span img {
-  cursor: pointer;
-  z-index: 20;
-  position: relative;
+cursor: pointer;
+z-index: 20;
+position: relative;
 }
 
 .searchBox{
-  position: absolute;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background: #333;
-  align-items: center;
-  padding: 0 30px;
-  transition: 0.5s ease-in-out;
+position: absolute;
+right: -100%;
+width: 100%;
+height: 100%;
+display: flex;
+background: #333;
+align-items: center;
+padding: 0 30px;
+transition: 0.5s ease-in-out;
 }
 
 .searchBox.active{
-  right: 100%;
+right: 100%;
 }
 
 .searchBox input{
-  width: 100%;
-  border: none;
-  outline: none;
-  height: 50px;
-  color: #fff;
-  font-size: 1.25em;
-  background: #333;
-  border-bottom: 1px solid #3fc6d0;
+width: 100%;
+border: none;
+outline: none;
+height: 50px;
+color: #fff;
+font-size: 1.25em;
+background: #333;
+border-bottom: 1px solid #3fc6d0;
 }
 
 .searchBtn{
-  position: relative;
-  left: 30px;
-  top:2.5px;
-  transition: 0.5s ease-in-out;
+position: relative;
+left: 30px;
+top:2.5px;
+transition: 0.5s ease-in-out;
 }
 
 .searchBtn.active{
-  left: 0;
+left: 0;
 }
 
 
 .closeBtn{
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.5s;
-  scale: 0;
+opacity: 0;
+visibility: hidden;
+transition: 0.5s;
+scale: 0;
 
 }
 
 .closeBtn.active{
-  opacity: 1;
-  visibility: visible;
-  transition: 0.5s;
-  scale: 1;
+opacity: 1;
+visibility: visible;
+transition: 0.5s;
+scale: 1;
 }
 
-
-
-/*Margin zwischen Nav und Login erstellen*/
-
-
-
-
-  
-  /*Login Fenster Vorlage*/
+/*Login Fenster Vorlage*/
 
 h2{
-  color: #fff ;
-  font-weight: 500;
-  text-align: center;
+color: #fff ;
+font-weight: 500;
+text-align: center;
+animation: come-in 1s ease-out;
+animation-fill-mode: backwards;
 }
 
 .login-window{
-  position: relative;
-  width: 380px;
-  height: 420px;
-  background: #1c1c1c;
-  border-radius: 8px;
-  overflow: hidden ;
+position: relative;
+width: 380px;
+height: 420px;
+background: #1c1c1c;
+border-radius: 8px;
+overflow: hidden ;
 }
 
 /* Animation */
 
 .login-window::before{
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 380px;
-  height: 420px;
-  background: linear-gradient(0deg, transparent,transparent,#45f3ff,
-  #45f3ff,#45f3ff);
-  z-index: 1;
-  transform-origin: bottom right;
-  animation: animate 6s linear infinite;
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 380px;
+height: 420px;
+background: linear-gradient(0deg, transparent,transparent,#45f3ff,
+#45f3ff,#45f3ff);
+z-index: 1;
+transform-origin: bottom right;
+animation: animate 6s linear infinite;
 }
 
 .login-window::after{
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 380px;
-  height: 420px;
-  background: linear-gradient(0deg, transparent,transparent,#ff2770,
-  #ff2770,#ff2770);
-  z-index: 1;
-  transform-origin: bottom right;
-  animation: animate 6s linear infinite;
-  animation-delay: -3s; ;
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 380px;
+height: 420px;
+background: linear-gradient(0deg, transparent,transparent,#ff2770,
+#ff2770,#ff2770);
+z-index: 1;
+transform-origin: bottom right;
+animation: animate 6s linear infinite;
+animation-delay: -3s; ;
 }
 
 @keyframes animate {
-  0%{ transform: rotate(0deg);}
-  100%{ transform: rotate(360deg);}
+0%{ transform: rotate(0deg);}
+100%{ transform: rotate(360deg);}
 }
 
 
 
 
 .login-form{
-  position: absolute;
-  inset: 4px;
-  background-color: #222;
-  padding: 50px 40px;
-  display:flex;
-  flex-direction: column;
-  z-index: 2;
-  border-radius: 8px;
+position: absolute;
+inset: 4px;
+background-color: #222;
+padding: 50px 40px;
+display:flex;
+flex-direction: column;
+z-index: 2;
+border-radius: 8px;
 }
 
 .inputbox{
-  position: relative;
-  width: 300px;
-  margin-top: 35px;
+position: relative;
+width: 300px;
+margin-top: 35px;
 }
 
 .inputbox input{
-  position: relative;
-  width: 100%;
-  padding: 20px 10px 10px;
-  background: transparent;
-  outline: none;
-  border: none;
-  box-shadow: none;
-  color: #23242a;
-  font-size: 1em;
-  transition: 0.5s;
-  z-index: 10; 
+position: relative;
+width: 100%;
+padding: 20px 10px 10px;
+background: transparent;
+outline: none;
+border: none;
+box-shadow: none;
+color: #23242a;
+font-size: 1em;
+transition: 0.5s;
+z-index: 10; 
 }
 
 .inputbox span {
-  position: absolute;
-  left: 0px;
-  padding: 20px 0px 10px;
-  pointer-events: none;
-  color: #8f8f8f;
-  font-size: 1em;
-  transition: 0.5s;
+position: absolute;
+left: 0px;
+padding: 20px 0px 10px;
+pointer-events: none;
+color: #8f8f8f;
+font-size: 1em;
+transition: 0.5s;
 }
 
 .inputbox input:valid ~ span,
 .inputbox input:focus ~ span {
-  color:#fff;
-  font-size: 0.75em;
-  transform: translateY(-34px);
+color:#fff;
+font-size: 0.75em;
+transform: translateY(-34px);
 
 }
 .inputbox i {
-  position: absolute;
-  left: 0px;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: #fff;
-  border-radius: 4px;
-  overflow: hidden;
-  transition: 0.5s;
-  pointer-events: none;
+position: absolute;
+left: 0px;
+bottom: 0;
+width: 100%;
+height: 2px;
+background: #fff;
+border-radius: 4px;
+overflow: hidden;
+transition: 0.5s;
+pointer-events: none;
+animation: come-in 1s ease-out .5s;
+animation-fill-mode: backwards;
+}
+
+@keyframes come-in{
+  0%{
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translate(0);
+    opacity: 1;
+  }
 }
 
 .inputbox input:valid ~ i,
 .inputbox input:focus ~ i {
-  height: 44px;
+height: 44px;
 }
+
 
 
 
@@ -288,35 +298,47 @@ h2{
 /*Registrieren*/
 
 .links{
-  display: flex;
-  justify-content: space-between;
+display: flex;
+justify-content: space-between;
 }
 
 .links a{
-  margin: 10px 0;
-  font-size: 0.75em;
-  color: #8f8f8f;
-  text-decoration: none;
+margin: 10px 0;
+font-size: 0.75em;
+color: #8f8f8f;
+text-decoration: none;
+animation: come-in 1s ease-out .5s;
+animation-fill-mode: backwards;
 }
 
 .links a:hover{
-  color: #fff;
+color: #fff;
 }
 
 .login-window input[type="submit"]{
-  border: none;
-  outline: none;
-  padding: 9px 25px;
-  background: #fff;
-  cursor: pointer;
-  font-size: 0.9em;
-  border-radius: 4px;
-  font-weight: 600;
-  width: 100px;
-  margin-top: 10px;
+border: none;
+outline: none;
+padding: 9px 25px;
+background: #fff;
+cursor: pointer;
+font-size: 0.9em;
+border-radius: 4px;
+font-weight: 600;
+width: 100px;
+margin-top: 10px;
+animation: come-in 1s ease-out 1s;
+animation-fill-mode: backwards;
+margin: auto;
+transition: all .2s;
 }
 
 .login-window input[type="submit"]:active{
-  opacity: 0.8;
+opacity: 0.8;
+transform: translateY(-1px);
+box-shadow: 0px 5px 10px rgba(0, 0, 0, .8);
 }
 
+.login-window input[type="submit"]:hover{
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, .8);
+}
