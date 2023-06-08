@@ -12,13 +12,13 @@
 
     <body>
       <header>
-        <a href ="#" class="logo"> Logo </a>
+        <a href ="{% url 'index' %}" class="logo"> Logo </a>
         <div class="nav">
           <ul class="navigation">
-            <li><a href="#">Startseite</a></li>
-            <li><a href="#">Lehrer</a></li>
-            <li><a href="#">Rules</a></li>
-            <li><a href="#">Test</a></li>
+            <li><a href="{% url 'index' %}">Startseite</a></li>
+            <li><a href="{% url 'lehrer' %}">Lehrer</a></li>
+            <li><a href="{% url 'rules' %}">Regeln</a></li>
+
           </ul>
 
           
@@ -61,27 +61,28 @@
           searchBtn.classList.remove('active');
         }
       </script>
-
       </header>
 
 
 
       <div class="login-window">
+       
         <form method="POST"  class="login-form">
 
-          <h2>Sign in</h2>
+          <h2>Login</h2>
 
           {%csrf_token%}
 
           <div class="inputbox">
           <input type="text" name="username" required="required">
-          <span>Username</span>
+          <span>Nutzername</span>
           <i></i>
           </div>
 
           <div class="inputbox">
           <input type="password" name="password" required="required" >
-          <span>Password</span>
+          <span>Passwort</span>
+
           <i></i>
           </div>
 
