@@ -1,40 +1,154 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
+
+
 <head>
 	<title>Regeln</title>
 	<meta charset="UTF-8">
+	<link href="{%static 'rules-style.css'%}" rel="stylesheet">
+  
+
 </head>
+
+
 <body>
-    <div><a class="Zurück" href="/">Zurück zur Startseite</a></div> 
-    <div><a class="Zurück" href="/lehrer/">Zurück zu "Lehrer"</a></div> 
-	<header>
-		<h1>Regeln für unsere Community</h1>
-	</header>
-	<nav>
-		<ul>
-			<li><a href="#regel1">Respektvolles Verhalten</a></li>
-			<li><a href="#regel2">Keine Beleidigungen</a></li>
-			<li><a href="#regel3">Kein Rassismus oder Diskriminierung</a></li>
-			<li><a href="#regel4">Kritik zur Verbesserung</a></li>
-		</ul>
-	</nav>
-	<main>
-		<section id="regel1">
-			<h2>Respektvolles Verhalten</h2>
-			<p>Bitte behandeln Sie alle Mitglieder unserer Community respektvoll. Jeder hat das Recht auf seine Meinung und seine Ansichten. Beleidigungen, Bedrohungen und unangebrachte Sprache werden nicht toleriert.</p>
-		</section>
-		<section id="regel2">
-			<h2>Keine Beleidigungen</h2>
-			<p>Beleidigungen oder abfällige Bemerkungen gegenüber anderen Mitgliedern unserer Community sind nicht erlaubt. Wenn Sie ein Problem mit jemandem haben, sprechen Sie es höflich und respektvoll an.</p>
-		</section>
-		<section id="regel3">
-			<h2>Kein Rassismus oder Diskriminierung</h2>
-			<p>Jede Form von Rassismus, Diskriminierung oder Hassrede wird nicht toleriert. Unsere Community besteht aus Menschen unterschiedlicher Herkunft, Kulturen und Religionen, die alle gleich behandelt werden sollten.</p>
-		</section>
-		<section id="regel4">
-			<h2>Kritik zur Verbesserung</h2>
-			<p>Wir möchten eine offene und freundliche Community schaffen, in der jeder seine Meinung äußern und Verbesserungsvorschläge machen kann. Kritik sollte jedoch immer konstruktiv sein und auf die Verbesserung der Schule, Lehrer und Schüler abzielen.</p>
-		</section>
-	</main>
+	 <!--Background-->
+	 <div class="bcontainer">
+		<div class="bubbles">
+		  <span style="--i:11;"></span>
+		  <span style="--i:12;"></span>
+		  <span style="--i:24;"></span>
+		  <span style="--i:10;"></span>
+		  <span style="--i:14;"></span>
+		  <span style="--i:23;"></span>
+		  <span style="--i:18;"></span>
+		  <span style="--i:16;"></span>
+		  <span style="--i:19;"></span>
+		  <span style="--i:20;"></span>
+		  <span style="--i:22;"></span>
+		  <span style="--i:25;"></span>
+		  <span style="--i:18;"></span>
+		  <span style="--i:21;"></span>
+		  <span style="--i:15;"></span>
+		  <span style="--i:13;"></span>
+		  <span style="--i:26;"></span>
+		  <span style="--i:17;"></span>
+		  <span style="--i:13;"></span>
+		  <span style="--i:28;"></span>
+		  <span style="--i:11;"></span>
+		  <span style="--i:12;"></span>
+		  <span style="--i:24;"></span>
+		  <span style="--i:10;"></span>
+		  <span style="--i:14;"></span>
+		  <span style="--i:23;"></span>
+		  <span style="--i:18;"></span>
+		  <span style="--i:16;"></span>
+		  <span style="--i:19;"></span>
+		  <span style="--i:20;"></span>
+		  <span style="--i:22;"></span>
+		  <span style="--i:25;"></span>
+		  <span style="--i:18;"></span>
+		  <span style="--i:21;"></span>
+		  <span style="--i:15;"></span>
+		  <span style="--i:13;"></span>
+		  <span style="--i:26;"></span>
+		  <span style="--i:17;"></span>
+		  <span style="--i:13;"></span>
+		  <span style="--i:28;"></span>
+		  <span style="--i:11;"></span>
+		  <span style="--i:12;"></span>
+		  <span style="--i:24;"></span>
+		  <span style="--i:10;"></span>
+		  <span style="--i:14;"></span>
+		  <span style="--i:23;"></span>
+		  <span style="--i:18;"></span>
+		  <span style="--i:16;"></span>
+		  <span style="--i:19;"></span>
+		  </div>
+		</div>
+
+
+
+		<!--Navigation oben-->
+    <header>
+      <a href ="{% url 'index' %}" class="logo"> Logo </a>
+      <div class="nav">
+        <ul class="navigation">
+          <li><a href="{% url 'index' %}">Startseite</a></li>
+          <li><a href="{% url 'lehrer' %}">Lehrer</a></li>
+          <li><a href="{% url 'rules' %}">Regeln</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+
+        </ul>
+
+        
+
+        <div class="search">
+          <span class="icon">   <!--icons8.de-->
+          <img name="search-outline" class="searchBtn" width="32" height="32" src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/external-search-interface-kiranshastry-gradient-kiranshastry.png" alt="external-search-interface-kiranshastry-gradient-kiranshastry"/>
+          <img name="close-outline" class="closeBtn" width="32" height="32" src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/external-close-banking-and-finance-kiranshastry-gradient-kiranshastry.png" alt="external-close-banking-and-finance-kiranshastry-gradient-kiranshastry"/>
+        </span>
+        </div>
+      </div>
+
+      <div class="searchBox">
+        <input type="text" placeholder="Suchen">
+      </div>
+
+      <script>document.querySelector('img[name="search-outline"]').addEventListener('click', function() {
+        document.querySelector('.searchBox').style.right = '0';
+    });
+    
+    document.querySelector('img[name="close-outline"]').addEventListener('click', function() {
+        document.querySelector('.searchBox').style.right = '-100%';
+    });
+    </script>
+
+    <script>
+      let searchBtn = document.querySelector('.searchBtn');
+      let closeBtn = document.querySelector('.closeBtn');
+      let searchBox = document.querySelector('.searchBox');
+
+      searchBtn.onclick = function (){
+        searchBox.classList.add('active');
+        closeBtn.classList.add('active');
+        searchBtn.classList.add('active');
+      }
+
+      closeBtn.onclick = function (){
+        searchBox.classList.remove('active');
+        closeBtn.classList.remove('active');
+        searchBtn.classList.remove('active');
+      }
+    </script>
+    </header>
+
+		
+		<!--Inhalt:Regeln-->
+		<div class="icontainer">
+			<h1>Regeln für unsere Community</h1>
+			<section>
+				<h2>Respektvolles Verhalten</h2>
+				<p>Bitte behandeln Sie alle Mitglieder unserer Community respektvoll. Jeder hat das Recht auf seine Meinung und seine Ansichten. Beleidigungen, Bedrohungen und unangebrachte Sprache werden nicht toleriert.</p>
+			</section>
+			<section>
+				<h2>Keine Beleidigungen</h2>
+				<p>Beleidigungen oder abfällige Bemerkungen gegenüber anderen Mitgliedern unserer Community sind nicht erlaubt. Wenn Sie ein Problem mit jemandem haben, sprechen Sie es höflich und respektvoll an.</p>
+			</section>
+			<section>
+				<h2>Kein Rassismus oder Diskriminierung</h2>
+				<p>Jede Form von Rassismus, Diskriminierung oder Hassrede wird nicht toleriert. Unsere Community besteht aus Menschen unterschiedlicher Herkunft, Kulturen und Religionen, die alle gleich behandelt werden sollten.</p>
+			</section>
+			<section>
+				<h2>Kritik zur Verbesserung</h2>
+				<p>Wir möchten eine offene und freundliche Community schaffen, in der jeder seine Meinung äußern und Verbesserungsvorschläge machen kann. Kritik sollte jedoch immer konstruktiv sein und auf die Verbesserung der Schule, Lehrer und Schüler abzielen.</p>
+			</section>
+		  </div>
+
+
+
 </body>
+
+
 </html>
