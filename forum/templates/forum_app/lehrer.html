@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syp_Projekt</title>
-    <link href="{%static 'lehrer.css'%}" rel="stylesheet">
+    <link href="{% static 'lehrer.css' %}" rel="stylesheet">
 </head>
 <body>      
     <header>
@@ -27,7 +27,7 @@
             </div>
         </div>
     
-        <!--Suchleiste-->
+        <!-- Suchleiste -->
         <div class="search-box">
             <div>
                 <select name="" id="">
@@ -41,49 +41,38 @@
 
         <div class="feedback-table">
             <div class="table-head"></div>
-            <div class="Feedbackgrund">Feedback</div>
+            <div class="Feedbackgrund">Hier könnt ihr eurer Feedback eintragen</div>
         </div>
-        <head>
-            <title>Create Feedback</title>
-        </head>
-        <head>
-            <title>Create Feedback</title>
-        </head>
-        <body>
-            <h1>Create Feedback</h1>
-            <button id="create-feedback-btn" onclick="showFeedbackForm()">Create Feedback</button>
-            <form id="feedback-form" style="display: none;" method="post" action="{% url 'lehrer' %}">
-                {% csrf_token %}
-                <label for="title">Title:</label>
-                <input type="text" id="title" name="title"><br><br>
-                <label for="content">Content:</label>
-                <textarea id="content" name="content"></textarea><br><br>
-                <button type="submit">Submit</button>
-            </form>
-        
-            <script>
-                function showFeedbackForm() {
-                    document.getElementById("feedback-form").style.display = "block";
-                }
-            </script>
-        </body>
-        {% for feedback in feedback %}
-        
-        <li>
-            <article class="feedback">
-                <div>
-                    <h3>{{ feedback.title }}</h3>
-                    <p>{{ feedback.content }}</p>
-                </div>
-            </article>
-        </li>
-          {% endfor %}
-    
-   
-   
-   
+
+        <h1>Create Feedback</h1>
+        <button id="create-feedback-btn" onclick="showFeedbackForm()">Create Feedback</button>
+        <form id="feedback-form" style="display: none;" method="post" action="{% url 'lehrer' %}">
+            {% csrf_token %}
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title"><br><br>
+            <label for="content">Content:</label>
+            <textarea id="content" name="content"></textarea><br><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <ul class="feedback-list">
+            {% for feedback in feedback %}
+                <li>
+                    <article class="feedback">
+                        <div>
+                            <h3>{{ feedback.title }}</h3>
+                            <p>{{ feedback.content }}</p>
+                        </div>
+                    </article>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
-    <!--<script src="forum_app/main.js"></script>-->
+
+    <script>
+        function showFeedbackForm() {
+            document.getElementById("feedback-form").style.display = "block";
+        }
+    </script>
 </body>
 </html>
-
