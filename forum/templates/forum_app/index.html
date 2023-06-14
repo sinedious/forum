@@ -48,6 +48,7 @@
           </div>
           {%csrf_token%}
           <div>
+            {{ beitrag_form.image }}
             <input type="submit" value="Posten">
             <input id="Abbrechen" type="submit" value="Abbrechen">
           </div>
@@ -64,13 +65,15 @@
         <ul>
           {% for post in beitrag %}
             <strong><a href="{% url 'beitrag-detail' post.pk %}">{{ post.titel }}</a> <br/> </strong>
-            {{ post.beitrag }}<hr>
-          {% endfor%}          
+            {{ post.beitrag }}
+            <img src="{{ post.image }}" alt=""> <hr>
+            {%endfor%}          
         </ul>
       {%else%}
         {% for post in beitrag %}
           <strong>{{ post.titel }}</strong><br>
-          {{ post.beitrag }}<hr>
+          {{ post.beitrag }}
+          <img src="{{ post.image }}" alt=""> <hr><hr>
         {% endfor%}
       {%endif%}
 

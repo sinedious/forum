@@ -1,5 +1,5 @@
 from django.contrib import admin
-from forum_app.models import beitrag
+from forum_app.models import beitrag, comment
 from lehrer.models import Feedback
 from message.models import Message
 
@@ -10,3 +10,4 @@ class PostAdmin(admin.ModelAdmin):
 admin.site.register(beitrag)
 admin.site.register(Feedback)
 admin.site.register(Message)
+admin.site.register(comment)
