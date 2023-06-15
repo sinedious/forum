@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <title>Syp_Projekt</title>
         <link href="{%static 'style2.css'%}" rel="stylesheet">
+        <link href="{%static 'message.css'%}" rel="stylesheet">
     </head>
     <body>
       <header>
@@ -36,13 +37,14 @@
         </nav>
       </header>
 
-
-      {% for message in messages %}
-        <div>
-            <p>Sie haben eine Nachricht von {{ message.sender }}:</p>
-            <p>{{ message.message }}</p>
+      <div  class= message-container>
+        {% for message in messages %}
+          <div>
+              <p>Sie haben eine Nachricht von {{ message.sender }}:</p>
+              <p>{{ message.message }}</p>
+          </div>
+        {% endfor %}
+          <a href="{% url 'send_message' %}">Nachricht schreiben</a>
         </div>
-      {% endfor %}
-        <a href="{% url 'send_message' %}">Nachricht schreiben</a>
     </body>
 </html>
