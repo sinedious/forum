@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <title>Syp_Projekt</title>
         <link href="{%static 'style2.css'%}" rel="stylesheet">
+        <link href="{%static 'index.css'%}" rel="stylesheet">
     </head>
     <body>
       <header>
@@ -97,27 +98,34 @@
         </form>
       </div>
       <div>
-        {% if user.is_authenticated %}
-          <h1>Wilkommen, {{username}}</h1>
-              
-        {%endif%}
+       
       </div>
 
-      {% if user.is_authenticated %}
-        <ul>
-          {% for post in beitrag %}
-            <strong><a href="{% url 'beitrag-detail' post.pk %}">{{ post.titel }}</a> <br/> </strong>
-            {{ post.beitrag }}
-            <img src="{{ post.image }}" alt=""> <hr>
-            {%endfor%}          
-        </ul>
-      {%else%}
-        {% for post in beitrag %}
-          <strong>{{ post.titel }}</strong><br>
-          {{ post.beitrag }}
-          <img src="{{ post.image }}" alt=""> <hr><hr>
-        {% endfor%}
-      {%endif%}
+      <div class="box">
+        <div class="box-inner"> 
+  {% if user.is_authenticated %}
+    <ul>
+      {% for post in beitrag %}     
+
+        <strong><a href="{% url 'beitrag-detail' post.pk %}">{{ post.titel }}</a> <br/> </strong>
+        {{ post.beitrag }}
+        <img src="{{ post.image }}" alt=""> <hr>
+        {%endfor%}          
+    </ul>
+  {%else%}
+    {% for post in beitrag %}
+      <strong>{{ post.titel }}</strong><br>
+      {{ post.beitrag }}
+      <img src="{{ post.image }}" alt=""> <hr><hr>
+    {% endfor%}
+  {%endif%}
+    </div>
+    <div class="border top"></div>
+    <div class="border left"></div>
+    <div class="border right"></div>
+    <div class="border bottom-left"></div>
+    <div class="border bottom-right"></div>
+</div>
 
       
 
