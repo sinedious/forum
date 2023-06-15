@@ -2,13 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
 }
 
 /* Global Style */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+
   line-height: 1.5;
   background-color: #f2f2f2;
   margin-top: 100px;
@@ -21,8 +20,6 @@ body {
 }
 
 /* Header */
-/*Navigation*/
-
 header{
   position: absolute;
   top: 0;
@@ -59,6 +56,7 @@ header ul{
 
 header ul li{
 list-style: none;
+position: relative;
 }  
 
 header ul li a{
@@ -86,6 +84,68 @@ header ul li a:hover::before{
 transform: scaleX(1);
 transform-origin: left;
 }
+
+
+/*Dropdown*/
+
+header ul li a.loged-in{
+  position: relative;
+  text-decoration: none;
+  font-size: 1em;
+  color: #3fc6d0;
+  text-transform:uppercase ;
+  letter-spacing: 0.2em;
+  }  
+  
+
+  header ul li ul{
+    display: none;
+    position: absolute;
+    background-color: #3fc6d0;
+    padding: 15px 5px; 
+    border-radius: 0px 0px 12px 12px;
+    box-shadow: 0 15px 15px rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+  
+  header ul li:hover ul{
+    display: block;
+  
+  }
+  
+  header ul li ul li {
+    list-style: none;
+    position: relative;
+    padding-top: 20px;
+  
+  }
+
+  
+
+header ul li ul li a.loged-in{
+  position: relative;
+  text-decoration: none;
+  color: #23242a;
+  padding: 16px 5px;
+  font-size: 1em;
+  letter-spacing: 0.2em;
+}
+header ul li ul li a.loged-in::before{
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  width: 90%;
+  height: 2px;
+  background-color: #ce2f5d;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right;
+  }
+  
+  header ul li ul li a.loged-in:hover::before{
+  transform: scaleX(1);
+  transform-origin: left;
+  }
 
 /*Search*/
 
@@ -142,7 +202,6 @@ transition: 0.5s ease-in-out;
 left: 0;
 }
 
-
 .closeBtn{
 opacity: 0;
 visibility: hidden;
@@ -157,6 +216,7 @@ visibility: visible;
 transition: 0.5s;
 scale: 1;
 }
+
 
 /* Feedback Forum */
 .Feedbackforum-title {
