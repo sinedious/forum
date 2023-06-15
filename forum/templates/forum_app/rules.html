@@ -71,58 +71,80 @@
 
 
 		<!--Navigation oben-->
-    <header>
-      <a href ="{% url 'index' %}" class="logo"> Logo </a>
-      <div class="nav">
-        <ul class="navigation">
-          <li><a href="{% url 'index' %}">Startseite</a></li>
-          <li><a href="{% url 'lehrer' %}">Lehrer</a></li>
-          <li><a href="{% url 'rules' %}">Regeln</a></li>
-          <li><a href="{% url 'login' %}">Login</a></li>
+      <header>
+        <a href ="{% url 'index' %}" class="logo"> Logo </a>
+        <div class="nav">
 
-        </ul>
+          <ul class="navigation">
+                <li><a href="{% url 'index' %}">Startseite</a></li>
+                <li><a href="{% url 'lehrer' %}">Lehrer</a></li>
+                <li><a href="{% url 'rules' %}">Regeln</a></li>
+                
 
+                {% if user.is_authenticated %}
+                <li><a href="{%url 'profil'%}" class="loged-in">Mein Profil</a>
+                    
+                    <ul>
+                      <li><a href="{%url 'inbox'%}" class="loged-in">Nachrichten</a></li>
+                      <li><a class="loged-in" href="{% url 'logout' %}">Logout</a></li>
+                      {% if user.is_superuser %}
+                      <li><a href="{% url 'admin:index' %}" class="loged-in" style="color: red;" >Admin</a></li>
+                      {%endif%}
+                    </ul>
+                 </li>
+              
+              {%else%}
+              <li><a href="{% url 'login' %}">Login</a></li>
+              {%endif%}
+            </div>
+          </ul>
+          
+          
+            <div class="search">
+              <span class="icon">   <!--icons8.de-->
+              <img name="search-outline" class="searchBtn" width="32" height="32" src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/external-search-interface-kiranshastry-gradient-kiranshastry.png" alt="external-search-interface-kiranshastry-gradient-kiranshastry"/>
+              <img name="close-outline" class="closeBtn" width="32" height="32" src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/external-close-banking-and-finance-kiranshastry-gradient-kiranshastry.png" alt="external-close-banking-and-finance-kiranshastry-gradient-kiranshastry"/>
+            </span>
+            </div>
+          </div>
+  
+          <div class="searchBox">
+            <input type="text" placeholder="Suchen">
+          </div>
+  
+          <script>document.querySelector('img[name="search-outline"]').addEventListener('click', function() {
+            document.querySelector('.searchBox').style.right = '0';
+        });
         
+        document.querySelector('img[name="close-outline"]').addEventListener('click', function() {
+            document.querySelector('.searchBox').style.right = '-100%';
+        });
+        </script>
+  
+        <script>
+          let searchBtn = document.querySelector('.searchBtn');
+          let closeBtn = document.querySelector('.closeBtn');
+          let searchBox = document.querySelector('.searchBox');
+  
+          searchBtn.onclick = function (){
+            searchBox.classList.add('active');
+            closeBtn.classList.add('active');
+            searchBtn.classList.add('active');
+          }
+  
+          closeBtn.onclick = function (){
+            searchBox.classList.remove('active');
+            closeBtn.classList.remove('active');
+            searchBtn.classList.remove('active');
+          }
+        </script>
+  
 
-        <div class="search">
-          <span class="icon">   <!--icons8.de-->
-          <img name="search-outline" class="searchBtn" width="32" height="32" src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/external-search-interface-kiranshastry-gradient-kiranshastry.png" alt="external-search-interface-kiranshastry-gradient-kiranshastry"/>
-          <img name="close-outline" class="closeBtn" width="32" height="32" src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/external-close-banking-and-finance-kiranshastry-gradient-kiranshastry.png" alt="external-close-banking-and-finance-kiranshastry-gradient-kiranshastry"/>
-        </span>
-        </div>
-      </div>
+          
 
-      <div class="searchBox">
-        <input type="text" placeholder="Suchen">
-      </div>
-
-      <script>document.querySelector('img[name="search-outline"]').addEventListener('click', function() {
-        document.querySelector('.searchBox').style.right = '0';
-    });
     
-    document.querySelector('img[name="close-outline"]').addEventListener('click', function() {
-        document.querySelector('.searchBox').style.right = '-100%';
-    });
-    </script>
+      </header>
 
-    <script>
-      let searchBtn = document.querySelector('.searchBtn');
-      let closeBtn = document.querySelector('.closeBtn');
-      let searchBox = document.querySelector('.searchBox');
-
-      searchBtn.onclick = function (){
-        searchBox.classList.add('active');
-        closeBtn.classList.add('active');
-        searchBtn.classList.add('active');
-      }
-
-      closeBtn.onclick = function (){
-        searchBox.classList.remove('active');
-        closeBtn.classList.remove('active');
-        searchBtn.classList.remove('active');
-      }
-    </script>
-    </header>
 
 		
 		<!--Inhalt:Regeln-->
