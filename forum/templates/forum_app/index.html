@@ -11,29 +11,31 @@
       <header>
         <a href ="{% url 'index' %}" class="logo"> Logo </a>
         <div class="nav">
+
           <ul class="navigation">
-
-
                 <li><a href="{% url 'index' %}">Startseite</a></li>
                 <li><a href="{% url 'lehrer' %}">Lehrer</a></li>
                 <li><a href="{% url 'rules' %}">Regeln</a></li>
-                <li><a href="{% url 'login' %}">Login</a></li>
+                
 
                 {% if user.is_authenticated %}
-                <li><a class="loged-in" href="{% url 'logout' %}">Logout</a></li>
-                  <li><a href="{%url 'profil'%}" class="loged-in">Mein Profil</a></li>
-                  <li><a href="{%url 'inbox'%}" class="loged-in">Nachrichten</a></li>
-                  
-                  {% if user.is_superuser %}
-                  <li></li><a href="{% url 'admin:index' %}" class="loged-in" style="color: red;" >Admin</a>
-                  {%endif%}!
-      
+                <li><a href="{%url 'profil'%}" class="loged-in">Mein Profil</a>
+                    
+                    <ul>
+                      <li><a href="{%url 'inbox'%}" class="loged-in">Nachrichten</a></li>
+                      <li><a class="loged-in" href="{% url 'logout' %}">Logout</a></li>
+                      {% if user.is_superuser %}
+                      <li><a href="{% url 'admin:index' %}" class="loged-in" style="color: red;" >Admin</a></li>
+                      {%endif%}
+                    </ul>
+                 </li>
               
               {%else%}
+              <li><a href="{% url 'login' %}">Login</a></li>
               {%endif%}
             </div>
-            
           </ul>
+          
           
             <div class="search">
               <span class="icon">   <!--icons8.de-->
@@ -79,6 +81,7 @@
 
     
       </header>
+
       <input id="post_erstellen" type="submit" value="Beitrag erstellen">
       <div id="beitrag-overlay"></div>
       <div id="beitrag-form">
